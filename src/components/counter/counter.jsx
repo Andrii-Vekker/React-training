@@ -10,32 +10,25 @@ class Counter extends Component {
         value: this.props.initialValue
     };
 
-    handleIncrement = (e) => {
+    handleIncrement = () => {
         // this.setState({
             // value: 10 ,
                            ///обьектная форма, только для перезаписи от предыдущего не работает
         // });
-        this.setState((prevState) => {
-            return {
-                value: prevState.value + 1
-            };
-        });
+        this.setState((prevState) => ({ value: prevState.value + 1 }));
     //     const { target } = e
     // setTimeout(() => console.log(target), 5000)   в асинхроном коде нужно сохранять событие 
     };
   
-    handleDecrement = (e) => { 
-        this.setState((prevState) => {
-            return {
-                value: prevState.value - 1
-            };
-        });
+    handleDecrement = () => { 
+        this.setState((prevState) => ({value: prevState.value - 1}));
     };
     render() {
     return(
             <div className="Counter">
             <span className="Counter__value">{ this.state.value }</span>
-            <Controls onIncrement={this.handleIncrement} onDecrement={ this.handleDecrement } />
+            <Controls onIncrement={this.handleIncrement}
+                      onDecrement={this.handleDecrement} />
             </div>
         );
     

@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const Controls = (onIncrement, onDecrement) => (
+const Controls = ({ onIncrement, onDecrement }) => (
     
     <div className="Counter__controls">
         <button type="button" onClick={onIncrement}>+1</button>
